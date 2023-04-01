@@ -7,9 +7,106 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Naborisk's Web Tools</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+    <div id="nav">
+      <div class="title">Web Tools</div>
+    </div>
+    <div id="container">
+      <input id="search-bar" type="text" name="" id="" />
+      <div id="list">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+      </div>
+    </div>
+    <div id="footer">
+      Made with &lt;3 by Naborisk
+    </div>
 	</body>
 </html>
+
+<style is:global>
+:root {
+  --bg-color: #333;
+  --accent-color: #111;
+  --text-color: #fff;
+  --items-bg: #888;
+  --items-color: #fff;
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+#nav {
+  background: var(--accent-color);
+  width: 100%;
+}
+
+#nav .title {
+  font-size: 20pt;
+}
+
+#footer {
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+  background: var(--accent-color);
+}
+
+#search-bar {
+  width: 100%;
+  font-size: 20pt;
+  background: var(--bg-color);
+  border: 1px solid #ccc;
+  transition: 2s;
+  color: var(--text-color);
+  border-radius: 5px;
+}
+
+#search-bar:hover {
+  border-color: var(--text-color);
+}
+
+#list {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(auto-fill, 400px);
+  width: 100%;
+  gap: 20px;
+}
+
+.items {
+  background: var(--items-bg);
+  height: 200px;
+}
+
+.items:hover {
+
+}
+</style>
